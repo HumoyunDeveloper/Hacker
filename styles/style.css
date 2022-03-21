@@ -389,12 +389,10 @@ a {
   .password-cracker {
     max-width: 300px;
     min-width: 200px;
-    width: 300px;
+   
   }
   .details {
     flex-direction: column;
   }
-  #terminal {
-    width: 300px;
-  }
+  
 }
