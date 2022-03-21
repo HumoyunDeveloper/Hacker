@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hacker Emulator">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="hacker,emulator,hacker_emulator">
+    <meta name="theme-color" content="#0f0">
+    <title>Hacker Emulation</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#111111">
+</head>
+
+<body>
+
+    <noscript>Oops.. Please update your Browser</noscript>
+
+    <div class="screen">
+        
+        <div id="volume-control"><span class="fa fa-volume-up"></span></div>
+        
+        <div style="left: 20%; top: 20%; z-index: 2;" class="password-cracker radius dragable">
+            <div class="action-bar">
+                <div class="title">Dear user:</div>
+            </div>
+            <div class="content" style="font-size: 16px;">
+                Hi! Here you can do some cool stuffs, click one of these folders on the left to execute a script.
+                Notice, using this website for harmful and illegal activites is strictly prohibited. So, stay tuned;
+                There will be a lot of folders soon.
+            </div>
+            <div class="buttons-grp">
+                <button class="btn exit" id="playm">
+                    Ok Continue
+                </button>
+            </div>
+        </div>
+        <div id="logs"></div>
+        <div class="folders">
+            <div class="folder" title="Terminal" id="terminal">
+                <div class="folder-image"></div>
+                <div class="title">Terminal</div>
+            </div>
+            <div class="folder" title="password-cracker" id="password-cracker-run">
+                <div class="folder-image"></div>
+                <div class="title">password-cracker</div>
+            </div>
+            <div class="folder" id="cctv" title="CCTV Camera">
+                <div class="folder-image"></div>
+                <div class="title">CCTV Cam</div>
+            </div>
+            <div class="folder" title="FullScreen" id="fullscreen-on">
+                <div class="folder-image"></div>
+                <div class="title">FullScreen</div>
+            </div>
+            <div class="folder" title="FullScreen" id="about">
+                <div class="folder-image"></div>
+                <div class="title">About</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="./libs/consolejs.js"></script>
+    <script src="./libs/Design.js"></script>
+    <script src="./libs/mod.min.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

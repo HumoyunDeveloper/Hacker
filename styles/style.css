@@ -1,0 +1,396 @@
+@import url("./_reset.css");
+
+:root {
+  --background-color: #000;
+  --text-color: #0f0;
+  --button-bg-color: #111;
+  --button-text-color: #fefefe;
+  --background-gradient: linear-gradient(90deg, #9ce756, rgb(38, 243, 243));
+  --font-family: monospace;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  overscroll-behavior-y: contain;
+}
+
+button {
+  user-select: none;
+}
+
+.screen {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url("../res/green-back.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+}
+
+.password-cracker {
+  max-width: 450px;
+  min-width: 300px;
+  position: absolute;
+  height: auto;
+  border: 2px solid #0f0;
+  padding-bottom: 0.3em;
+  background-color: #000;
+  box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+pre {
+  width: 100%;
+  white-space: pre-line;
+  height: 300px;
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 300px;
+}
+
+.terminal {
+  max-width: 400px;
+  min-width: 300px;
+  position: absolute;
+  max-height: 350px;
+  border: 2px solid #0f0;
+  padding-bottom: 0.3em;
+  overflow: hidden;
+  background-color: #000;
+  box-shadow: 2px 2px 3px 4px rgba(0, 0, 0, 0.4);
+}
+pre::-webkit-scrollbar {
+  width: 10px;
+}
+pre::-webkit-scrollbar-track {
+  background: #444;
+  border-radius: 2px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #0f0;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.terminal .title2 {
+  clear: both;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  outline: none;
+  cursor: pointer;
+}
+
+.terminal .action-bar {
+  display: flex;
+  background-color: #0f0;
+  color: #000;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  user-select: none;
+  padding: 0.4em 0.7em 0.4em 0.5em;
+  cursor: move;
+}
+
+.folders {
+  padding: 0.5em 0 0 1em;
+}
+
+a {
+  color: #0ff;
+}
+
+.animationbehind {
+  background-image: url("../res/server.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 17px;
+}
+
+.folder {
+  width: 60px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed transparent;
+  padding: 0.6em;
+  cursor: pointer;
+}
+
+.folder .title {
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.buttons-grp {
+  margin-top: 0.4em;
+  padding: 0.4em 0.7em 0.4em 0.5em;
+  border-top: 1px solid #0f0;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.buttons-grp .btn {
+  padding: 0.2em 0.5em;
+  background-color: #0f0;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  outline: none;
+  font-family: monospace;
+  font-size: 17px;
+}
+
+.folder:hover {
+  border: 1px dashed #0f0;
+}
+
+#volume-control {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30px;
+}
+
+.folder-image {
+  background-image: url("../res/green-folder.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40px;
+}
+
+.folder::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%);
+}
+
+.password-cracker .password-cracker {
+  position: relative;
+}
+
+.password-cracker .action-bar {
+  display: flex;
+  background-color: #0f0;
+  color: #000;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  user-select: none;
+  padding: 0.4em 0.7em 0.4em 0.5em;
+  cursor: move;
+}
+
+.password-cracker .action-bar2 {
+  display: flex;
+  background-color: #0f0;
+  color: #000;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  user-select: none;
+  padding: 0.4em 0.7em 0.4em 0.5em;
+}
+
+.no-allowed {
+  cursor: default;
+}
+
+.terminal .action-bar .exit {
+  user-select: none;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 0.2em;
+  text-align: center;
+}
+
+.password-cracker .action-bar .exit {
+  user-select: none;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 0.2em;
+  text-align: center;
+}
+
+.password-cracker .action-bar .exit:active {
+  background-color: #0f0;
+  color: white;
+}
+
+.password-cracker .content {
+  padding: 0.4em 0.7em 0.4em 0.5em;
+}
+
+.terminal .content {
+  font-size: 16px;
+  padding: 0.4em 0.7em 0.4em 0.5em;
+}
+
+.radius {
+  border-radius: 5px;
+}
+
+.table {
+  width: 50%;
+  margin-top: 0.9em;
+}
+
+.table tr td {
+  padding: 0.3em;
+  border: 1px solid #0f0;
+  text-align: center;
+}
+
+.green td {
+  background-color: #0f0;
+  color: #000;
+}
+
+.b-btn {
+  padding: 0.2em 0.5em;
+  background-color: black;
+  color: #0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  outline: none;
+  font-family: monospace;
+  font-size: 17px;
+}
+
+.details {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.details .c1 {
+  margin-top: 0.2em;
+}
+
+.input {
+  margin-top: 0.3em;
+  outline: none;
+  font-family: monospace;
+  font-size: 17px;
+  color: #0f0;
+  background-color: black;
+  width: 82%;
+  border: 1px solid #0f0;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex #lockAnimation {
+  width: 50%;
+  height: auto;
+  background-image: url("../res/lock-green.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.console {
+  margin-top: 0.7em;
+  padding: 0.9em 0.7em 0.9em 0.5em;
+  border: 2px solid #0f0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.console .state {
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+#pmss {
+  background-color: #0f0;
+  color: #000;
+  letter-spacing: 5px;
+  padding: 0.3em;
+}
+
+.video {
+  width: 100%;
+}
+
+.wait {
+  width: 50px;
+  height: auto;
+}
+
+#logs {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  padding: 0.5em 0 0 1em;
+}
+
+.ww {
+  background-image: url("../res/wait.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50px;
+}
+
+@keyframes anim {
+  to {
+    color: #f00;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .password-cracker {
+    max-width: 300px;
+    min-width: 200px;
+  }
+  .details {
+    flex-direction: column;
+  }
+}
